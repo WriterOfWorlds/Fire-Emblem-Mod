@@ -23,14 +23,11 @@
     "immuneToFire": true,
     "stayInGridWhenCrafting": false,
     "damageOnCrafting": false,
-    "onRightClickedInAir": {
-      "name": "RelicSwordRightClickedInAir"
-    },
-    "onRightClickedOnBlock": {
-      "name": "RelicSwordRightClickedInAir"
-    },
     "onEntityHitWith": {
       "name": "RelicSwordLivingEntityIsHitWithTool"
+    },
+    "onItemInUseTick": {
+      "name": "RelicSwordRightClickedInAir"
     }
   }
 }
