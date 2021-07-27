@@ -13,7 +13,6 @@ import net.minecraft.entity.Entity;
 import net.mcreator.fireemblem.item.RelicSwordItem;
 import net.mcreator.fireemblem.FireEmblemMod;
 
-import java.util.Random;
 import java.util.Map;
 import java.util.HashMap;
 
@@ -46,13 +45,7 @@ public class AutoRegenProcedure {
 		Entity entity = (Entity) dependencies.get("entity");
 		if ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
 				.getItem() == RelicSwordItem.block)) {
-			{
-				ItemStack _ist = ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY);
-				if (_ist.attemptDamageItem((int) (-5), new Random(), null)) {
-					_ist.shrink(1);
-					_ist.setDamage(0);
-				}
-			}
+			(((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)).setDamage((int) 0);
 		}
 	}
 }
