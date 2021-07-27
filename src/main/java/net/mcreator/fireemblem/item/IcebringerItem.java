@@ -10,9 +10,11 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.item.IItemTier;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
 import net.mcreator.fireemblem.procedures.IcebringerToolInHandTickProcedure;
+import net.mcreator.fireemblem.procedures.IcebringerLivingEntityIsHitWithToolProcedure;
 import net.mcreator.fireemblem.FireEmblemModElements;
 
 import java.util.Map;
@@ -53,6 +55,21 @@ public class IcebringerItem extends FireEmblemModElements.ModElement {
 				return Ingredient.EMPTY;
 			}
 		}, 3, -2.7f, new Item.Properties().group(ItemGroup.COMBAT)) {
+			@Override
+			public boolean hitEntity(ItemStack itemstack, LivingEntity entity, LivingEntity sourceentity) {
+				boolean retval = super.hitEntity(itemstack, entity, sourceentity);
+				double x = entity.getPosX();
+				double y = entity.getPosY();
+				double z = entity.getPosZ();
+				World world = entity.world;
+				{
+					Map<String, Object> $_dependencies = new HashMap<>();
+					$_dependencies.put("entity", entity);
+					IcebringerLivingEntityIsHitWithToolProcedure.executeProcedure($_dependencies);
+				}
+				return retval;
+			}
+
 			@Override
 			public void inventoryTick(ItemStack itemstack, World world, Entity entity, int slot, boolean selected) {
 				super.inventoryTick(itemstack, world, entity, slot, selected);

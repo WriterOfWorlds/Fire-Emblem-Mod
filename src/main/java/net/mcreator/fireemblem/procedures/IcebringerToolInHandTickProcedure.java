@@ -41,7 +41,7 @@ public class IcebringerToolInHandTickProcedure {
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
 		if ((world.canBlockSeeSky(new BlockPos((int) x, (int) y, (int) z)))) {
-			entity.setFire((int) 15);
+			entity.setFire((int) 1);
 		}
 	}
 }
