@@ -3,9 +3,9 @@
   "_type": "tool",
   "definition": {
     "renderType": 0,
-    "texture": "herorelic",
+    "texture": "icerelic",
     "customModelName": "Normal",
-    "name": "Flamebringer",
+    "name": "Ice Storm",
     "specialInfo": [],
     "creativeTab": {
       "value": "COMBAT"
@@ -15,19 +15,16 @@
     "efficiency": 6.0,
     "attackSpeed": 1.3,
     "enchantability": 0,
-    "damageVsEntity": 8.0,
-    "usageCount": 100,
+    "damageVsEntity": 10.0,
+    "usageCount": 320,
     "blocksAffected": [],
     "hasGlow": false,
     "repairItems": [],
-    "immuneToFire": true,
+    "immuneToFire": false,
     "stayInGridWhenCrafting": false,
     "damageOnCrafting": false,
-    "onEntityHitWith": {
-      "name": "RelicSwordLivingEntityIsHitWithTool"
-    },
     "onItemInUseTick": {
-      "name": "RelicSwordRightClickedInAir"
+      "name": "IcebringerToolInHandTick"
     }
   }
 }

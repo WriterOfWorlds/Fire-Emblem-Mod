@@ -10,29 +10,27 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.item.IItemTier;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
-import net.mcreator.fireemblem.procedures.RelicSwordRightClickedInAirProcedure;
-import net.mcreator.fireemblem.procedures.RelicSwordLivingEntityIsHitWithToolProcedure;
+import net.mcreator.fireemblem.procedures.IcebringerToolInHandTickProcedure;
 import net.mcreator.fireemblem.FireEmblemModElements;
 
 import java.util.Map;
 import java.util.HashMap;
 
 @FireEmblemModElements.ModElement.Tag
-public class RelicSwordItem extends FireEmblemModElements.ModElement {
-	@ObjectHolder("fire_emblem:relic_sword")
+public class IcebringerItem extends FireEmblemModElements.ModElement {
+	@ObjectHolder("fire_emblem:icebringer")
 	public static final Item block = null;
-	public RelicSwordItem(FireEmblemModElements instance) {
-		super(instance, 25);
+	public IcebringerItem(FireEmblemModElements instance) {
+		super(instance, 35);
 	}
 
 	@Override
 	public void initElements() {
 		elements.items.add(() -> new SwordItem(new IItemTier() {
 			public int getMaxUses() {
-				return 100;
+				return 320;
 			}
 
 			public float getEfficiency() {
@@ -40,7 +38,7 @@ public class RelicSwordItem extends FireEmblemModElements.ModElement {
 			}
 
 			public float getAttackDamage() {
-				return 6f;
+				return 8f;
 			}
 
 			public int getHarvestLevel() {
@@ -54,22 +52,7 @@ public class RelicSwordItem extends FireEmblemModElements.ModElement {
 			public Ingredient getRepairMaterial() {
 				return Ingredient.EMPTY;
 			}
-		}, 3, -2.7f, new Item.Properties().group(ItemGroup.COMBAT).isImmuneToFire()) {
-			@Override
-			public boolean hitEntity(ItemStack itemstack, LivingEntity entity, LivingEntity sourceentity) {
-				boolean retval = super.hitEntity(itemstack, entity, sourceentity);
-				double x = entity.getPosX();
-				double y = entity.getPosY();
-				double z = entity.getPosZ();
-				World world = entity.world;
-				{
-					Map<String, Object> $_dependencies = new HashMap<>();
-					$_dependencies.put("entity", entity);
-					RelicSwordLivingEntityIsHitWithToolProcedure.executeProcedure($_dependencies);
-				}
-				return retval;
-			}
-
+		}, 3, -2.7f, new Item.Properties().group(ItemGroup.COMBAT)) {
 			@Override
 			public void inventoryTick(ItemStack itemstack, World world, Entity entity, int slot, boolean selected) {
 				super.inventoryTick(itemstack, world, entity, slot, selected);
@@ -79,10 +62,13 @@ public class RelicSwordItem extends FireEmblemModElements.ModElement {
 				if (selected) {
 					Map<String, Object> $_dependencies = new HashMap<>();
 					$_dependencies.put("entity", entity);
-					$_dependencies.put("itemstack", itemstack);
-					RelicSwordRightClickedInAirProcedure.executeProcedure($_dependencies);
+					$_dependencies.put("x", x);
+					$_dependencies.put("y", y);
+					$_dependencies.put("z", z);
+					$_dependencies.put("world", world);
+					IcebringerToolInHandTickProcedure.executeProcedure($_dependencies);
 				}
 			}
-		}.setRegistryName("relic_sword"));
+		}.setRegistryName("icebringer"));
 	}
 }
