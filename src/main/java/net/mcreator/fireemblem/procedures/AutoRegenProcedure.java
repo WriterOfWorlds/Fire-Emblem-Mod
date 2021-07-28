@@ -5,7 +5,6 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.entity.player.PlayerWakeUpEvent;
 
 import net.minecraft.world.World;
-import net.minecraft.world.IWorld;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.item.ItemStack;
 import net.minecraft.entity.player.PlayerEntity;
@@ -44,24 +43,19 @@ public class AutoRegenProcedure {
 				FireEmblemMod.LOGGER.warn("Failed to load dependency entity for procedure AutoRegen!");
 			return;
 		}
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				FireEmblemMod.LOGGER.warn("Failed to load dependency world for procedure AutoRegen!");
-			return;
-		}
 		Entity entity = (Entity) dependencies.get("entity");
-		IWorld world = (IWorld) dependencies.get("world");
-		if (((world.getWorldInfo().getDayTime()) <= 13000)) {
-			if ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
-					.getItem() == RelicSwordItem.block)) {
-				(((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)).setDamage(
-						(int) (((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)).getDamage())
-								- 30));
-				if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-					((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("You feel well rested. The Flamebringer was repaired."),
-							(false));
-				}
+		if ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+				.getItem() == RelicSwordItem.block)) {
+			(((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)).setDamage(
+					(int) (((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)).getDamage())
+							- 30));
+			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("You feel well rested. The Flamebringer was repaired."), (false));
 			}
 		}
+		if (entity instanceof PlayerEntity)
+			((PlayerEntity) entity).getFoodStats().setFoodLevel((int) 20);
+		if (entity instanceof PlayerEntity)
+			((PlayerEntity) entity).giveExperiencePoints((int) 10);
 	}
 }

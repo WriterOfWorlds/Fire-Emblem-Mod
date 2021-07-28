@@ -13,8 +13,8 @@ import net.minecraft.item.IItemTier;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
-import net.mcreator.fireemblem.procedures.RelicSwordRightClickedInAirProcedure;
-import net.mcreator.fireemblem.procedures.RelicSwordLivingEntityIsHitWithToolProcedure;
+import net.mcreator.fireemblem.procedures.RelicSwordToolInHandTickProcedure;
+import net.mcreator.fireemblem.procedures.AutoRegenProcedure;
 import net.mcreator.fireemblem.FireEmblemModElements;
 
 import java.util.Map;
@@ -32,7 +32,7 @@ public class RelicSwordItem extends FireEmblemModElements.ModElement {
 	public void initElements() {
 		elements.items.add(() -> new SwordItem(new IItemTier() {
 			public int getMaxUses() {
-				return 100;
+				return 200;
 			}
 
 			public float getEfficiency() {
@@ -65,7 +65,7 @@ public class RelicSwordItem extends FireEmblemModElements.ModElement {
 				{
 					Map<String, Object> $_dependencies = new HashMap<>();
 					$_dependencies.put("entity", entity);
-					RelicSwordLivingEntityIsHitWithToolProcedure.executeProcedure($_dependencies);
+					AutoRegenProcedure.executeProcedure($_dependencies);
 				}
 				return retval;
 			}
@@ -79,8 +79,7 @@ public class RelicSwordItem extends FireEmblemModElements.ModElement {
 				if (selected) {
 					Map<String, Object> $_dependencies = new HashMap<>();
 					$_dependencies.put("entity", entity);
-					$_dependencies.put("itemstack", itemstack);
-					RelicSwordRightClickedInAirProcedure.executeProcedure($_dependencies);
+					RelicSwordToolInHandTickProcedure.executeProcedure($_dependencies);
 				}
 			}
 		}.setRegistryName("relic_sword"));
