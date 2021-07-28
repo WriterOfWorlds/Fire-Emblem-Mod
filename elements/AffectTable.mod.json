@@ -2,20 +2,19 @@
   "_fv": 23,
   "_type": "block",
   "definition": {
-    "texture": "stonebrick",
-    "textureTop": "stonebrick",
-    "textureLeft": "stonebrick",
-    "textureFront": "stonebrick",
-    "textureRight": "stonebrick",
-    "textureBack": "stonebrick",
-    "renderType": 11,
-    "customModelName": "Single texture",
+    "texture": "planks_oak",
+    "textureTop": "affecttable",
+    "textureLeft": "accenttable",
+    "textureFront": "accenttable",
+    "textureRight": "accenttable",
+    "textureBack": "accenttable",
+    "renderType": 10,
+    "customModelName": "Normal",
     "rotationMode": 0,
     "emissiveRendering": false,
     "displayFluidOverlay": false,
     "itemTexture": "",
     "particleTexture": "",
-    "blockBase": "Slab",
     "tintType": "No tint",
     "isItemTinted": false,
     "hasTransparency": false,
@@ -33,14 +32,14 @@
         "subtract": false
       }
     ],
-    "name": "Dark Brick",
+    "name": "Relic Table",
     "specialInfo": [],
     "hardness": 1.0,
     "resistance": 10.0,
     "hasGravity": false,
     "isWaterloggable": false,
     "creativeTab": {
-      "value": "No creative tab entry"
+      "value": "DECORATIONS"
     },
     "destroyTool": "Not specified",
     "customDrop": {
@@ -53,7 +52,7 @@
     "canRedstoneConnect": false,
     "lightOpacity": 15,
     "material": {
-      "value": "ROCK"
+      "value": "WOOD"
     },
     "tickRate": 10,
     "tickRandomly": false,
@@ -78,7 +77,7 @@
     "isNotColidable": false,
     "isCustomSoundType": false,
     "soundOnStep": {
-      "value": "STONE"
+      "value": "WOOD"
     },
     "breakSound": {
       "value": ""

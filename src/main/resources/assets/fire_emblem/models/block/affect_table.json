@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "fire_emblem:blocks/planks_oak",
+    "up": "fire_emblem:blocks/affecttable",
+    "north": "fire_emblem:blocks/accenttable",
+    "east": "fire_emblem:blocks/accenttable",
+    "south": "fire_emblem:blocks/accenttable",
+    "west": "fire_emblem:blocks/accenttable",
+    "particle": "fire_emblem:blocks/planks_oak"
+  }
+}

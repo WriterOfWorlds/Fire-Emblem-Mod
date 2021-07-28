@@ -118,22 +118,13 @@
       "registry_name": "cracked_dark_brick"
     },
     {
-      "name": "DarkBrickSlab",
+      "name": "AffectTable",
       "type": "block",
       "sortid": 39,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "dark_brick_slab"
-    },
-    {
-      "name": "DarkBrickStairs",
-      "type": "block",
-      "sortid": 40,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "dark_brick_stairs"
+      "registry_name": "affect_table"
     }
   ],
   "variable_elements": [],
@@ -144,8 +135,7 @@
       "block.fire_emblem.dark_brick": "Dark Brick",
       "item.fire_emblem.relic_sword": "Flamebringer",
       "block.fire_emblem.cracked_dark_brick": "Cracked Dark Brick",
-      "block.fire_emblem.dark_brick_stairs": "Dark Brick",
-      "block.fire_emblem.dark_brick_slab": "Dark Brick"
+      "block.fire_emblem.affect_table": "Relic Table"
     }
   },
   "foldersRoot": {

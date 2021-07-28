@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "fire_emblem:block/affect_table"
+    }
+  }
+}

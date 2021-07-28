@@ -7,10 +7,10 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.loot.LootContext;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.item.BlockItem;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.StairsBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Block;
@@ -21,24 +21,22 @@ import java.util.List;
 import java.util.Collections;
 
 @FireEmblemModElements.ModElement.Tag
-public class DarkBrickStairsBlock extends FireEmblemModElements.ModElement {
-	@ObjectHolder("fire_emblem:dark_brick_stairs")
+public class AffectTableBlock extends FireEmblemModElements.ModElement {
+	@ObjectHolder("fire_emblem:affect_table")
 	public static final Block block = null;
-	public DarkBrickStairsBlock(FireEmblemModElements instance) {
-		super(instance, 40);
+	public AffectTableBlock(FireEmblemModElements instance) {
+		super(instance, 39);
 	}
 
 	@Override
 	public void initElements() {
 		elements.blocks.add(() -> new CustomBlock());
-		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(null)).setRegistryName(block.getRegistryName()));
+		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(ItemGroup.DECORATIONS)).setRegistryName(block.getRegistryName()));
 	}
-	public static class CustomBlock extends StairsBlock {
+	public static class CustomBlock extends Block {
 		public CustomBlock() {
-			super(() -> new Block(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(1f, 10f).setLightLevel(s -> 0))
-					.getDefaultState(),
-					Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(1f, 10f).setLightLevel(s -> 0));
-			setRegistryName("dark_brick_stairs");
+			super(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).hardnessAndResistance(1f, 10f).setLightLevel(s -> 0));
+			setRegistryName("affect_table");
 		}
 
 		@Override

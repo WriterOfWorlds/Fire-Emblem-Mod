@@ -1,5 +1,5 @@
 {
-  "parent": "fire_emblem:block/dark_brick_slab",
+  "parent": "fire_emblem:block/affect_table",
   "display": {
     "thirdperson": {
       "rotation": [
