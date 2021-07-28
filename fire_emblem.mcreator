@@ -91,71 +91,61 @@
       }
     },
     {
-      "name": "Icebringer",
-      "type": "tool",
-      "sortid": 35,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "icebringer"
-    },
-    {
-      "name": "IcebringerToolInHandTick",
-      "type": "procedure",
+      "name": "StoneRelic",
+      "type": "item",
       "sortid": 36,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "icebringer_tool_in_hand_tick",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
+      "registry_name": "stone_relic"
     },
     {
-      "name": "IcebringerLivingEntityIsHitWithTool",
-      "type": "procedure",
+      "name": "DarkBrick",
+      "type": "block",
       "sortid": 37,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "icebringer_living_entity_is_hit_with_tool",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
+      "registry_name": "dark_brick"
+    },
+    {
+      "name": "CrackedDarkBrick",
+      "type": "block",
+      "sortid": 38,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "cracked_dark_brick"
+    },
+    {
+      "name": "DarkBrickSlab",
+      "type": "block",
+      "sortid": 39,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dark_brick_slab"
+    },
+    {
+      "name": "DarkBrickStairs",
+      "type": "block",
+      "sortid": 40,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dark_brick_stairs"
     }
   ],
   "variable_elements": [],
   "sound_elements": [],
   "language_map": {
     "en_us": {
-      "item.fire_emblem.icebringer": "Ice Storm",
-      "item.fire_emblem.relic_sword": "Flamebringer"
+      "item.fire_emblem.stone_relic": "Stone Relic",
+      "block.fire_emblem.dark_brick": "Dark Brick",
+      "item.fire_emblem.relic_sword": "Flamebringer",
+      "block.fire_emblem.cracked_dark_brick": "Cracked Dark Brick",
+      "block.fire_emblem.dark_brick_stairs": "Dark Brick",
+      "block.fire_emblem.dark_brick_slab": "Dark Brick"
     }
   },
   "foldersRoot": {

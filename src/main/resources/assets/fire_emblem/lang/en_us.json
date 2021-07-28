@@ -1,4 +1,8 @@
 {
-  "item.fire_emblem.icebringer": "Ice Storm",
-  "item.fire_emblem.relic_sword": "Flamebringer"
+  "item.fire_emblem.stone_relic": "Stone Relic",
+  "block.fire_emblem.dark_brick": "Dark Brick",
+  "item.fire_emblem.relic_sword": "Flamebringer",
+  "block.fire_emblem.cracked_dark_brick": "Cracked Dark Brick",
+  "block.fire_emblem.dark_brick_stairs": "Dark Brick",
+  "block.fire_emblem.dark_brick_slab": "Dark Brick"
 }

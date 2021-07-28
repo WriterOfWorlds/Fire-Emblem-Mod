@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "fire_emblem:blocks/stonebrick",
+    "up": "fire_emblem:blocks/stonebrick",
+    "north": "fire_emblem:blocks/stonebrick",
+    "east": "fire_emblem:blocks/stonebrick",
+    "south": "fire_emblem:blocks/stonebrick",
+    "west": "fire_emblem:blocks/stonebrick",
+    "particle": "fire_emblem:blocks/stonebrick"
+  }
+}
